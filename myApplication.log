@@ -1,0 +1,33 @@
+2020-12-14 22:40:39.367  INFO 11940 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 11940 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-14 22:40:39.372  INFO 11940 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-14 22:40:40.486  INFO 11940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-14 22:40:40.616  INFO 11940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 2 JPA repository interfaces.
+2020-12-14 22:40:41.286  INFO 11940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-14 22:40:41.347  INFO 11940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-14 22:40:41.527  INFO 11940 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-14 22:40:41.727  INFO 11940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-14 22:40:41.905  INFO 11940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-14 22:40:41.936  INFO 11940 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-14 22:40:43.178  INFO 11940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-14 22:40:43.191  INFO 11940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-14 22:40:43.918  WARN 11940 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-14 22:40:43.963  INFO 11940 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.286 seconds (JVM running for 7.253)
+2020-12-14 22:40:49.482  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Who is head of department Computer Science?
+2020-12-14 22:40:49.498  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Head of Computer Science department is Nora White
+2020-12-14 22:40:51.490  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
+2020-12-14 22:40:51.526  INFO 11940 --- [main] com.botscrew.university.MyRunner         : assistants - 1: 
+associate professors - 1 
+professors - 1
+2020-12-14 22:40:53.352  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show the average salary for the department Computer Science
+2020-12-14 22:40:53.374  INFO 11940 --- [main] com.botscrew.university.MyRunner         : The average salary of Computer Science is 25000.00
+2020-12-14 22:40:55.807  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show count of employee for Computer Science
+2020-12-14 22:40:55.817  INFO 11940 --- [main] com.botscrew.university.MyRunner         : 3
+2020-12-14 22:41:00.994  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by ick
+2020-12-14 22:41:01.003  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Nick Green Mick Black
+2020-12-14 22:41:05.952  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by or
+2020-12-14 22:41:05.960  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Nora White
+2020-12-14 22:41:09.268  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by van
+2020-12-14 22:41:09.277  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Ivan Petrenko Petro Ivanov
+2020-12-14 22:41:12.044  INFO 11940 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-14 22:41:12.051  INFO 11940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-14 22:41:12.056  INFO 11940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
