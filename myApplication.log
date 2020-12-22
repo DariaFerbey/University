@@ -1,33 +1,616 @@
-2020-12-14 22:40:39.367  INFO 11940 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 11940 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
-2020-12-14 22:40:39.372  INFO 11940 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
-2020-12-14 22:40:40.486  INFO 11940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-12-14 22:40:40.616  INFO 11940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 2 JPA repository interfaces.
-2020-12-14 22:40:41.286  INFO 11940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-12-14 22:40:41.347  INFO 11940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
-2020-12-14 22:40:41.527  INFO 11940 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2020-12-14 22:40:41.727  INFO 11940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-12-14 22:40:41.905  INFO 11940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-12-14 22:40:41.936  INFO 11940 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-12-14 22:40:43.178  INFO 11940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-12-14 22:40:43.191  INFO 11940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-12-14 22:40:43.918  WARN 11940 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2020-12-14 22:40:43.963  INFO 11940 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.286 seconds (JVM running for 7.253)
-2020-12-14 22:40:49.482  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Who is head of department Computer Science?
-2020-12-14 22:40:49.498  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Head of Computer Science department is Nora White
-2020-12-14 22:40:51.490  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
-2020-12-14 22:40:51.526  INFO 11940 --- [main] com.botscrew.university.MyRunner         : assistants - 1: 
+2020-12-22 16:04:04.862  INFO 16516 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 16516 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 16:04:04.878  INFO 16516 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 16:04:06.176  INFO 16516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 16:04:06.359  INFO 16516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 2 JPA repository interfaces.
+2020-12-22 16:04:07.027  INFO 16516 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 16:04:07.107  INFO 16516 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 16:04:07.280  INFO 16516 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 16:04:07.405  INFO 16516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 16:04:07.621  INFO 16516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 16:04:07.643  INFO 16516 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 16:04:08.835  INFO 16516 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 16:04:08.852  INFO 16516 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 16:04:09.792  WARN 16516 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 16:04:09.842  INFO 16516 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.712 seconds (JVM running for 8.205)
+2020-12-22 16:04:18.785  WARN 16516 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 16:04:18.786 ERROR 16516 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "DL.LECTOR_IDINNER" not found; SQL statement:
+select AVG(salary) from lectors l inner join department_lectors dl on l.id=dl.lector_idinner join departments d on dl.department_id=d.id where title=? [42122-200]
+2020-12-22 16:05:46.026  INFO 15516 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 15516 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 16:05:46.031  INFO 15516 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 16:05:47.254  INFO 15516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 16:05:47.362  INFO 15516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2020-12-22 16:05:47.987  INFO 15516 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 16:05:48.044  INFO 15516 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 16:05:48.198  INFO 15516 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 16:05:48.357  INFO 15516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 16:05:48.480  INFO 15516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 16:05:48.497  INFO 15516 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 16:05:49.395  INFO 15516 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 16:05:49.407  INFO 15516 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 16:05:50.086  WARN 15516 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 16:05:50.125  INFO 15516 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.872 seconds (JVM running for 10.576)
+2020-12-22 16:05:56.466  WARN 15516 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 16:05:56.467 ERROR 15516 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "DL.LECTOR_IDINNER" not found; SQL statement:
+select AVG(salary) from lectors l inner join department_lectors dl on l.id=dl.lector_idinner join departments d on dl.department_id=d.id where title=? [42122-200]
+2020-12-22 16:11:23.516  INFO 3092 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 3092 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 16:11:23.522  INFO 3092 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 16:11:24.678  INFO 3092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 16:11:24.822  INFO 3092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 2 JPA repository interfaces.
+2020-12-22 16:11:25.534  INFO 3092 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 16:11:25.608  INFO 3092 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 16:11:25.759  INFO 3092 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 16:11:25.916  INFO 3092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 16:11:26.036  INFO 3092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 16:11:26.056  INFO 3092 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 16:11:26.964  INFO 3092 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 16:11:26.976  INFO 3092 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 16:11:27.623  WARN 3092 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 16:11:27.668  INFO 3092 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.943 seconds (JVM running for 6.674)
+2020-12-22 16:11:48.913  WARN 3092 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 16:11:48.913 ERROR 3092 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "DL.LECTOR_IDINNER" not found; SQL statement:
+select AVG(l.salary) from lectors l inner join department_lectors dl on l.id=dl.lector_idinner join departments d on dl.department_id=d.id where title=? [42122-200]
+2020-12-22 17:42:58.072  INFO 17144 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17144 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:42:58.078  INFO 17144 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:42:59.423  INFO 17144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:42:59.533  INFO 17144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:43:00.330  INFO 17144 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:43:00.401  INFO 17144 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:43:00.581  INFO 17144 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:43:00.794  INFO 17144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:43:00.968  INFO 17144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:43:00.995  INFO 17144 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:43:02.014  INFO 17144 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:43:02.028  INFO 17144 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:43:02.736  WARN 17144 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:43:02.778  INFO 17144 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.367 seconds (JVM running for 7.993)
+2020-12-22 17:43:08.621  WARN 17144 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:43:08.622 ERROR 17144 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where title=? [42122-200]
+2020-12-22 17:49:44.829  INFO 17312 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17312 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:49:44.834  INFO 17312 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:49:45.950  INFO 17312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:49:46.071  INFO 17312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:49:46.703  INFO 17312 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:49:46.783  INFO 17312 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:49:46.972  INFO 17312 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:49:47.112  INFO 17312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:49:47.230  INFO 17312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:49:47.247  INFO 17312 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:49:48.244  INFO 17312 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:49:48.258  INFO 17312 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:49:48.957  WARN 17312 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:49:48.999  INFO 17312 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.857 seconds (JVM running for 6.672)
+2020-12-22 17:49:57.602  WARN 17312 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:49:57.602 ERROR 17312 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "D.TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where d.title in (select d.title from departments d where d.title =?) [42122-200]
+2020-12-22 17:50:14.429  INFO 8180 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 8180 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:50:14.435  INFO 8180 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:50:15.564  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:50:15.705  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:50:16.570  INFO 8180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:50:16.635  INFO 8180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:50:16.833  INFO 8180 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:50:17.052  INFO 8180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:50:17.236  INFO 8180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:50:17.278  INFO 8180 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:50:18.464  INFO 8180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:50:18.477  INFO 8180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:50:19.219  WARN 8180 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:50:19.270  INFO 8180 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.7 seconds (JVM running for 7.44)
+2020-12-22 17:50:22.468  WARN 8180 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:50:22.469 ERROR 8180 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where title in (select d.title from departments d where d.title =?) [42122-200]
+2020-12-22 17:51:03.276  INFO 10496 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 10496 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:51:03.282  INFO 10496 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:51:04.438  INFO 10496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:51:04.572  INFO 10496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:51:05.290  INFO 10496 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:51:05.360  INFO 10496 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:51:05.579  INFO 10496 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:51:05.802  INFO 10496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:51:05.943  INFO 10496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:51:05.961  INFO 10496 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:51:06.978  INFO 10496 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:51:06.990  INFO 10496 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:51:07.914  WARN 10496 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:51:07.981  INFO 10496 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.59 seconds (JVM running for 8.476)
+2020-12-22 17:51:23.979  WARN 10496 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:51:23.980 ERROR 10496 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where title in (select title from departments  where title =?) [42122-200]
+2020-12-22 17:51:57.366  INFO 9904 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 9904 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:51:57.372  INFO 9904 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:51:58.833  INFO 9904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:51:59.119  INFO 9904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 247 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:52:00.418  INFO 9904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:52:00.527  INFO 9904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:52:00.708  INFO 9904 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:52:00.869  INFO 9904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:52:01.030  INFO 9904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:52:01.052  INFO 9904 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:52:02.148  INFO 9904 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:52:02.161  INFO 9904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:52:02.966  WARN 9904 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:52:03.029  INFO 9904 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 6.536 seconds (JVM running for 8.308)
+2020-12-22 17:52:09.674  WARN 9904 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:52:09.675 ERROR 9904 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where title in (select title from departments  where title =?) [42122-200]
+2020-12-22 17:54:04.613  INFO 17324 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17324 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 17:54:04.620  INFO 17324 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 17:54:05.718  INFO 17324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 17:54:05.842  INFO 17324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 2 JPA repository interfaces.
+2020-12-22 17:54:06.581  INFO 17324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 17:54:06.657  INFO 17324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 17:54:06.866  INFO 17324 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 17:54:07.064  INFO 17324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 17:54:07.239  INFO 17324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 17:54:07.264  INFO 17324 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 17:54:08.371  INFO 17324 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 17:54:08.398  INFO 17324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 17:54:09.216  WARN 17324 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 17:54:09.266  INFO 17324 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.327 seconds (JVM running for 7.202)
+2020-12-22 17:54:14.930  WARN 17324 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 17:54:14.930 ERROR 17324 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "TITLE" not found; SQL statement:
+select AVG(l.salary) from lectors l where title in (select title from departments  where title =?) group by l.id [42122-200]
+2020-12-22 18:00:51.393  INFO 956 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 956 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:00:51.405  INFO 956 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:00:52.786  INFO 956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:00:52.944  INFO 956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:00:54.518  INFO 956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:00:54.698  INFO 956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:00:55.023  INFO 956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:00:55.425  INFO 956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:00:55.645  INFO 956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:00:55.678  INFO 956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:00:57.311  INFO 956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:00:57.330  INFO 956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:00:58.501  WARN 956 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:00:58.579  INFO 956 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 8.32 seconds (JVM running for 10.466)
+2020-12-22 18:10:49.431  INFO 9584 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 9584 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:10:49.436  INFO 9584 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:10:50.628  INFO 9584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:10:50.751  INFO 9584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:10:51.475  INFO 9584 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:10:51.549  INFO 9584 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:10:51.838  INFO 9584 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:10:52.075  INFO 9584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:10:52.269  INFO 9584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:10:52.301  INFO 9584 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:10:53.562  INFO 9584 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:10:53.575  INFO 9584 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:10:54.399  WARN 9584 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:10:54.454  INFO 9584 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.709 seconds (JVM running for 7.44)
+2020-12-22 18:10:58.094  WARN 9584 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 18:10:58.095 ERROR 9584 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "L.NAME" not found; SQL statement:
+select l.name, avg(l.salary) from lectors l join departments d on l.id=d.id and title=? group by l.name [42122-200]
+2020-12-22 18:11:38.796  INFO 17084 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17084 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:11:38.801  INFO 17084 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:11:39.907  INFO 17084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:11:40.041  INFO 17084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:11:40.720  INFO 17084 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:11:40.799  INFO 17084 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:11:41.024  INFO 17084 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:11:41.201  INFO 17084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:11:41.318  INFO 17084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:11:41.334  INFO 17084 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:11:42.216  INFO 17084 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:11:42.229  INFO 17084 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:11:42.879  WARN 17084 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:11:42.925  INFO 17084 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.809 seconds (JVM running for 6.595)
+2020-12-22 18:12:00.828  WARN 17084 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 18:12:00.830 ERROR 17084 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "L.FISRT_NAME" not found; SQL statement:
+select l.fisrt_name, avg(l.salary) from lectors l join departments d on l.id=d.id and title=? group by l.first_name [42122-200]
+2020-12-22 18:12:19.518  INFO 6480 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 6480 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:12:19.524  INFO 6480 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:12:20.608  INFO 6480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:12:20.721  INFO 6480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:12:21.412  INFO 6480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:12:21.508  INFO 6480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:12:21.701  INFO 6480 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:12:21.833  INFO 6480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:12:21.949  INFO 6480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:12:21.966  INFO 6480 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:12:22.850  INFO 6480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:12:22.884  INFO 6480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:12:23.540  WARN 6480 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:12:23.582  INFO 6480 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.746 seconds (JVM running for 6.414)
+2020-12-22 18:13:27.927  INFO 13480 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 13480 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:13:27.936  INFO 13480 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:13:29.034  INFO 13480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:13:29.141  INFO 13480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:13:29.855  INFO 13480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:13:29.922  INFO 13480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:13:30.205  INFO 13480 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:13:30.430  INFO 13480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:13:30.606  INFO 13480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:13:30.627  INFO 13480 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:13:31.584  INFO 13480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:13:31.596  INFO 13480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:13:32.256  WARN 13480 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:13:32.298  INFO 13480 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.022 seconds (JVM running for 6.816)
+2020-12-22 18:16:51.958  INFO 17312 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17312 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:16:51.973  INFO 17312 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:16:53.149  INFO 17312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:16:53.277  INFO 17312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:16:54.153  INFO 17312 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:16:54.248  INFO 17312 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:16:54.487  INFO 17312 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:16:54.670  INFO 17312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:16:54.820  INFO 17312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:16:54.844  INFO 17312 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:16:55.784  INFO 17312 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:16:55.819  INFO 17312 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:16:56.444  WARN 17312 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:16:56.485  INFO 17312 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.194 seconds (JVM running for 6.93)
+2020-12-22 18:17:01.094  WARN 17312 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2020-12-22 18:17:01.094 ERROR 17312 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "DL.LECTOR_IDINNER" not found; SQL statement:
+select l.first_name, avg(l.salary) from lectors l inner join department_lectors dl on l.id=dl.lector_idinner join departments d on dl.department_id=d.id and title=? [42122-200]
+2020-12-22 18:31:36.153  INFO 11148 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 11148 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:31:36.160  INFO 11148 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:31:37.274  INFO 11148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:31:37.386  INFO 11148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:31:38.112  INFO 11148 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:31:38.171  INFO 11148 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:31:38.318  INFO 11148 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:31:38.452  INFO 11148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:31:38.567  INFO 11148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:31:38.585  INFO 11148 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:31:39.474  INFO 11148 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:31:39.485  INFO 11148 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:31:40.219  WARN 11148 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:31:40.265  INFO 11148 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.742 seconds (JVM running for 6.415)
+2020-12-22 18:31:49.487  WARN 11148 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42000, SQLState: 42000
+2020-12-22 18:31:49.487 ERROR 11148 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Syntax error in SQL statement "SELECT COUNT(DISTINCT L.ID) FROM DEPARTMENTS D WHERE TITLE=? INNER[*] JOIN DEPARTMENT_LECTORS DL ON D.ID=DL.DEPARTMENT_ID"; SQL statement:
+select count(distinct l.id) from departments d where title=? inner join department_lectors dl on d.id=dl.department_id [42000-200]
+2020-12-22 18:34:05.628  INFO 16440 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 16440 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:34:05.635  INFO 16440 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:34:07.293  INFO 16440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:34:07.529  INFO 16440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:34:08.598  INFO 16440 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:34:08.691  INFO 16440 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:34:08.927  INFO 16440 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:34:09.129  INFO 16440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:34:09.280  INFO 16440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:34:09.304  INFO 16440 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:34:10.399  INFO 16440 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:34:10.413  INFO 16440 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:34:10.852  WARN 16440 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myRunner': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+2020-12-22 18:34:10.852  INFO 16440 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:34:10.856  INFO 16440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 18:34:10.864  INFO 16440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 18:34:10.879  INFO 16440 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-22 18:34:10.913 ERROR 16440 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myRunner': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) ~[spring-boot-2.4.1.jar:2.4.1]
+	at com.botscrew.university.UniversityApplication.main(UniversityApplication.java:12) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1206) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 32 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:157) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:136) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at java.base/java.util.Optional.map(Optional.java:258) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$6(RepositoryFactoryBeanSupport.java:326) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 43 common frames omitted
+
+2020-12-22 18:34:20.761  INFO 17380 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17380 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:34:20.766  INFO 17380 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:34:21.867  INFO 17380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:34:22.002  INFO 17380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:34:22.639  INFO 17380 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:34:22.703  INFO 17380 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:34:22.876  INFO 17380 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:34:23.041  INFO 17380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:34:23.185  INFO 17380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:34:23.203  INFO 17380 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:34:24.195  INFO 17380 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:34:24.209  INFO 17380 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:34:24.721  WARN 17380 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myRunner': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+2020-12-22 18:34:24.721  INFO 17380 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:34:24.725  INFO 17380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 18:34:24.731  INFO 17380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 18:34:24.744  INFO 17380 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-22 18:34:24.768 ERROR 17380 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myRunner': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) ~[spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) ~[spring-boot-2.4.1.jar:2.4.1]
+	at com.botscrew.university.UniversityApplication.main(UniversityApplication.java:12) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl' defined in file [D:\JOM\TestAssignment\University\target\classes\com\botscrew\university\service\impl\DepartmentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1206) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'departmentRepository' defined in com.botscrew.university.repository.DepartmentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 32 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract int com.botscrew.university.repository.DepartmentRepository.findNumberOfEmployee(java.lang.String) but parameter 'Optional[name]' not found in annotated query 'select count(distinct l.id) from lectors l inner join department_lectors dl on l.id=dl.lector_id inner join departments d on dl.department_id=d.id and  title=:title'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:157) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:136) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at java.base/java.util.Optional.map(Optional.java:258) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$6(RepositoryFactoryBeanSupport.java:326) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.2.jar:5.3.2]
+	... 43 common frames omitted
+
+2020-12-22 18:35:07.358  INFO 1220 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 1220 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:35:07.362  INFO 1220 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:35:08.438  INFO 1220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:35:08.578  INFO 1220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:35:09.180  INFO 1220 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:35:09.245  INFO 1220 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:35:09.418  INFO 1220 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:35:09.568  INFO 1220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:35:09.684  INFO 1220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:35:09.703  INFO 1220 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:35:10.585  INFO 1220 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:35:10.599  INFO 1220 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:35:11.313  WARN 1220 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:35:11.357  INFO 1220 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.702 seconds (JVM running for 6.5)
+2020-12-22 18:35:16.098  INFO 1220 --- [main] com.botscrew.university.MyRunner         : Show count of employee for Computer Science
+2020-12-22 18:35:16.100  INFO 1220 --- [main] com.botscrew.university.MyRunner         : 3
+2020-12-22 18:36:59.597  INFO 15724 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 15724 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:36:59.602  INFO 15724 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:37:00.763  INFO 15724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:37:00.888  INFO 15724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:37:01.583  INFO 15724 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:37:01.641  INFO 15724 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:37:01.863  INFO 15724 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:37:02.086  INFO 15724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:37:02.245  INFO 15724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:37:02.267  INFO 15724 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:37:03.237  INFO 15724 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:37:03.250  INFO 15724 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:37:03.883  WARN 15724 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:37:03.926  INFO 15724 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.991 seconds (JVM running for 7.131)
+2020-12-22 18:37:11.894  INFO 15724 --- [main] com.botscrew.university.MyRunner         : Show the average salary for the department Computer Science
+2020-12-22 18:37:11.896  INFO 15724 --- [main] com.botscrew.university.MyRunner         : The average salary of Computer Science is 25000.00
+2020-12-22 18:43:37.014  INFO 3720 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 3720 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:43:37.020  INFO 3720 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:43:38.135  INFO 3720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:43:38.262  INFO 3720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:43:38.985  INFO 3720 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:43:39.049  INFO 3720 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:43:39.205  INFO 3720 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:43:39.341  INFO 3720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:43:39.481  INFO 3720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:43:39.498  INFO 3720 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:43:40.386  INFO 3720 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:43:40.397  INFO 3720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:43:41.035  WARN 3720 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:43:41.077  INFO 3720 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.713 seconds (JVM running for 6.734)
+2020-12-22 18:43:46.540  INFO 3720 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
+2020-12-22 18:43:46.597  INFO 3720 --- [main] com.botscrew.university.MyRunner         : assistants - 0: 
 associate professors - 1 
 professors - 1
-2020-12-14 22:40:53.352  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show the average salary for the department Computer Science
-2020-12-14 22:40:53.374  INFO 11940 --- [main] com.botscrew.university.MyRunner         : The average salary of Computer Science is 25000.00
-2020-12-14 22:40:55.807  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Show count of employee for Computer Science
-2020-12-14 22:40:55.817  INFO 11940 --- [main] com.botscrew.university.MyRunner         : 3
-2020-12-14 22:41:00.994  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by ick
-2020-12-14 22:41:01.003  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Nick Green Mick Black
-2020-12-14 22:41:05.952  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by or
-2020-12-14 22:41:05.960  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Nora White
-2020-12-14 22:41:09.268  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Global search by van
-2020-12-14 22:41:09.277  INFO 11940 --- [main] com.botscrew.university.MyRunner         : Ivan Petrenko Petro Ivanov
-2020-12-14 22:41:12.044  INFO 11940 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-12-14 22:41:12.051  INFO 11940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-12-14 22:41:12.056  INFO 11940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 18:44:18.659  INFO 12632 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 12632 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:44:18.670  INFO 12632 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:44:19.786  INFO 12632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:44:19.902  INFO 12632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:44:20.627  INFO 12632 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:44:20.695  INFO 12632 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:44:20.862  INFO 12632 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:44:21.000  INFO 12632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:44:21.153  INFO 12632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:44:21.174  INFO 12632 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:44:22.085  INFO 12632 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:44:22.098  INFO 12632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:44:22.759  WARN 12632 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:44:22.801  INFO 12632 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.848 seconds (JVM running for 6.538)
+2020-12-22 18:44:27.747  INFO 12632 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
+2020-12-22 18:44:27.793  INFO 12632 --- [main] com.botscrew.university.MyRunner         : assistants - 0: 
+associate professors - 1 
+professors - 1
+2020-12-22 18:45:22.149  INFO 3184 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 3184 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:45:22.154  INFO 3184 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:45:23.355  INFO 3184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:45:23.473  INFO 3184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:45:24.174  INFO 3184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:45:24.238  INFO 3184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:45:24.434  INFO 3184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:45:24.618  INFO 3184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:45:24.774  INFO 3184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:45:24.794  INFO 3184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:45:25.792  INFO 3184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:45:25.804  INFO 3184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:45:26.596  WARN 3184 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:45:26.659  INFO 3184 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.276 seconds (JVM running for 7.158)
+2020-12-22 18:45:32.530  INFO 3184 --- [main] com.botscrew.university.MyRunner         : Show Economic statistics.
+2020-12-22 18:45:32.579  INFO 3184 --- [main] com.botscrew.university.MyRunner         : assistants - 0: 
+associate professors - 0 
+professors - 2
+2020-12-22 18:46:42.539  INFO 4868 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 4868 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:46:42.545  INFO 4868 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:46:43.732  INFO 4868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:46:43.863  INFO 4868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:46:44.544  INFO 4868 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:46:44.632  INFO 4868 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:46:44.871  INFO 4868 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:46:45.052  INFO 4868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:46:45.181  INFO 4868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:46:45.203  INFO 4868 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:46:46.502  INFO 4868 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:46:46.514  INFO 4868 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:46:47.298  WARN 4868 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:46:47.349  INFO 4868 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 5.517 seconds (JVM running for 7.483)
+2020-12-22 18:46:54.054  INFO 4868 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
+2020-12-22 18:46:54.086  INFO 4868 --- [main] com.botscrew.university.MyRunner         : assistants - 1: 
+associate professors - 1 
+professors - 1
+2020-12-22 18:47:09.359  INFO 14476 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 14476 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:47:09.375  INFO 14476 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:47:10.527  INFO 14476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:47:10.634  INFO 14476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:47:11.319  INFO 14476 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:47:11.390  INFO 14476 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:47:11.543  INFO 14476 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:47:11.685  INFO 14476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:47:11.839  INFO 14476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:47:11.863  INFO 14476 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:47:12.757  INFO 14476 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:47:12.769  INFO 14476 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:47:13.410  WARN 14476 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:47:13.453  INFO 14476 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.835 seconds (JVM running for 6.631)
+2020-12-22 18:47:23.548  INFO 14476 --- [main] com.botscrew.university.MyRunner         : Show Psychology statistics.
+2020-12-22 18:47:23.587  INFO 14476 --- [main] com.botscrew.university.MyRunner         : assistants - 1: 
+associate professors - 0 
+professors - 1
+2020-12-22 18:50:53.714  INFO 17088 --- [main] c.b.university.UniversityApplication     : Starting UniversityApplication using Java 13.0.1 on Dasha with PID 17088 (D:\JOM\TestAssignment\University\target\classes started by User in D:\JOM\TestAssignment\University)
+2020-12-22 18:50:53.721  INFO 17088 --- [main] c.b.university.UniversityApplication     : No active profile set, falling back to default profiles: default
+2020-12-22 18:50:54.764  INFO 17088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 18:50:54.877  INFO 17088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 2 JPA repository interfaces.
+2020-12-22 18:50:55.562  INFO 17088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 18:50:55.621  INFO 17088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 18:50:55.785  INFO 17088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 18:50:55.927  INFO 17088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 18:50:56.069  INFO 17088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 18:50:56.087  INFO 17088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-22 18:50:56.959  INFO 17088 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 18:50:56.971  INFO 17088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:50:57.597  WARN 17088 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 18:50:57.637  INFO 17088 --- [main] c.b.university.UniversityApplication     : Started UniversityApplication in 4.609 seconds (JVM running for 6.272)
+2020-12-22 18:51:07.472  INFO 17088 --- [main] com.botscrew.university.MyRunner         : Who is head of department Computer Science?
+2020-12-22 18:51:07.486  INFO 17088 --- [main] com.botscrew.university.MyRunner         : Head of Computer Science department is Nora White
+2020-12-22 18:51:10.632  INFO 17088 --- [main] com.botscrew.university.MyRunner         : Show Computer Science statistics.
+2020-12-22 18:51:10.637  INFO 17088 --- [main] com.botscrew.university.MyRunner         : assistants - 1: 
+associate professors - 1 
+professors - 1
+2020-12-22 18:51:19.069  INFO 17088 --- [main] com.botscrew.university.MyRunner         : Show the average salary for the department Computer Science
+2020-12-22 18:51:19.071  INFO 17088 --- [main] com.botscrew.university.MyRunner         : The average salary of Computer Science is 25000.00
+2020-12-22 18:51:50.864  INFO 17088 --- [main] com.botscrew.university.MyRunner         : Show count of employee for Computer Science
+2020-12-22 18:51:50.866  INFO 17088 --- [main] com.botscrew.university.MyRunner         : 3
+2020-12-22 18:51:55.752  INFO 17088 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 18:51:55.760  INFO 17088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 18:51:55.765  INFO 17088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
