@@ -1,8 +1,8 @@
-INSERT INTO lectors (id,first_name, salary, degree) VALUES (1, 'Nick Green', 10000, 'ASSISTANT')
-INSERT INTO lectors (id,first_name, salary, degree) VALUES (2, 'Nora White', 40000, 'PROFESSOR')
-INSERT INTO lectors (id,first_name, salary, degree) VALUES (3, 'Mick Black', 25000, 'ASSOCIATE_PROFESSOR')
-INSERT INTO lectors (id,first_name, salary, degree) VALUES (4, 'Ivan Petrenko', 25000, 'ASSOCIATE_PROFESSOR')
-INSERT INTO lectors (id,first_name, salary, degree) VALUES (5, 'Petro Ivanov', 55000, 'PROFESSOR')
+INSERT INTO lectors (id, first_name, salary, degree) VALUES (1, 'Nick Green', 10000, 'ASSISTANT')
+INSERT INTO lectors (id, first_name, salary, degree) VALUES (2, 'Nora White', 40000, 'PROFESSOR')
+INSERT INTO lectors (id, first_name, salary, degree) VALUES (3, 'Mick Black', 25000, 'ASSOCIATE_PROFESSOR')
+INSERT INTO lectors (id, first_name, salary, degree) VALUES (4, 'Ivan Petrenko', 25000, 'ASSOCIATE_PROFESSOR')
+INSERT INTO lectors (id, first_name, salary, degree) VALUES (5, 'Petro Ivanov', 55000, 'PROFESSOR')
 
 INSERT INTO departments (id, title, head_of_department) VALUES (4, 'Computer Science', 'Nora White')
 INSERT INTO departments (id, title, head_of_department) VALUES (5, 'Psychology', 'Nick Green')

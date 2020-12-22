@@ -18,7 +18,8 @@ public class LectorServiceImpl implements LectorService {
 
     @Override
     public String globalSearchByTemplate(String template) {
-        return lectorRepository.getLectors().stream().map(Lector::getName).filter(l->l.contains(template)).collect(Collectors.joining(" "));
+        return String.valueOf(lectorRepository.globalSearchByTemplate(template));
+//        return lectorRepository.getLectors().stream().map(Lector::getName).filter(l->l.contains(template)).collect(Collectors.joining(" "));
 
     }
 
