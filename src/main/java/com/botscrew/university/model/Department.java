@@ -1,7 +1,6 @@
 package com.botscrew.university.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity

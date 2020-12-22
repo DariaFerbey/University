@@ -5,28 +5,30 @@ import com.botscrew.university.service.DepartmentService;
 import com.botscrew.university.service.LectorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+@Component
 public class MyView {
 
-    @Autowired
     private DepartmentService departmentService;
-    @Autowired
     private LectorService lectorService;
+
     private Map<String, String> menu;
     private Map<String, String> nameOfDepartment;
     private Map<String, Printable> methodsMenu;
+
     private String title;
+
     private static Scanner input = new Scanner(System.in);
     private static final Logger logger = LoggerFactory.getLogger(MyRunner.class);
 
-    public MyView(DepartmentService departmentService, LectorService lectorService) {
-        this.departmentService = departmentService;
-        this.lectorService = lectorService;
+    public MyView(DepartmentService departmentService,LectorService lectorService) {
+        this.departmentService =departmentService;
+        this.lectorService=lectorService;
         listOfDepartment();
         setMenu();
         setMethodsMenu();

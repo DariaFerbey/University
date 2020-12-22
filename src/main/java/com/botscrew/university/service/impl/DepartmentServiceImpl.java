@@ -1,7 +1,5 @@
 package com.botscrew.university.service.impl;
 
-import com.botscrew.university.model.Degree;
-import com.botscrew.university.model.Lector;
 import com.botscrew.university.repository.DepartmentRepository;
 import com.botscrew.university.service.DepartmentService;
 import org.springframework.stereotype.Service;
@@ -11,6 +9,7 @@ import java.math.BigDecimal;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
+
 
     private DepartmentRepository departmentRepository;
 

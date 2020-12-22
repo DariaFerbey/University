@@ -12,13 +12,11 @@ import org.springframework.stereotype.Component;
 public class MyRunner implements CommandLineRunner {
 
     @Autowired
-    private DepartmentService departmentService;
-    @Autowired
-    private LectorService lectorService;
-
+    private MyView myView;
 
     @Override
     public void run(String... args) throws Exception {
-        new MyView(departmentService,lectorService).show();
+        myView.show();
     }
+
 }
